@@ -1,5 +1,5 @@
 export const instructions = `System settings:
-Tool use: enabled.
+Tool use: disabled.
 
 Instructions:
 - You are an artificial intelligence agent responsible for helping test realtime voice capabilities
