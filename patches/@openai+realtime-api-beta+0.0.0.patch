@@ -21,27 +21,24 @@ index cc8f904..3fe89f7 100644
          {
            finishRequest: (request) => {
 diff --git a/node_modules/@openai/realtime-api-beta/lib/client.js b/node_modules/@openai/realtime-api-beta/lib/client.js
-index 2c48d7f..189c95e 100644
+index 2c48d7f..f186c68 100644
 --- a/node_modules/@openai/realtime-api-beta/lib/client.js
 +++ b/node_modules/@openai/realtime-api-beta/lib/client.js
-@@ -194,16 +194,17 @@ export class RealtimeClient extends RealtimeEventHandler {
-   constructor({ url, apiKey, dangerouslyAllowAPIKeyInBrowser, debug } = {}) {
-     super();
+@@ -196,14 +196,15 @@ export class RealtimeClient extends RealtimeEventHandler {
      this.defaultSessionConfig = {
--      modalities: ['text', 'audio'],
-+      modalities: ['audio'],
+       modalities: ['text', 'audio'],
        instructions: '',
 -      voice: 'verse',
-+      voice: 'ash',
++      voice: 'alloy',
        input_audio_format: 'pcm16',
        output_audio_format: 'pcm16',
-+      model: 'gpt-4o-mini-realtime-preview-2024-12-17',
        input_audio_transcription: null,
        turn_detection: null,
        tools: [],
++      model: 'gpt-4o-mini-realtime-preview-2024-12-17',
        tool_choice: 'auto',
 -      temperature: 0.8,
-+      temperature: 0.1,
++      temperature: 0.61,
        max_response_output_tokens: 4096,
      };
      this.sessionConfig = {};
