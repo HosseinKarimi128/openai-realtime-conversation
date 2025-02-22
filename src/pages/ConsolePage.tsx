@@ -504,7 +504,7 @@ export function ConsolePage() {
    * Render the application
    */
   return (
-    <div data-component="ConsolePage">
+    <div data-component="ConsolePage" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
       <div className="content-actions">
         {isConnected && canPushToTalk && (
           <Button
@@ -515,15 +515,6 @@ export function ConsolePage() {
             onMouseUp={stopRecording}
           />
         )}
-        <Button
-          label={isConnected ? 'disconnect' : 'connect'}
-          iconPosition={isConnected ? 'end' : 'start'}
-          icon={isConnected ? X : Zap}
-          buttonStyle={isConnected ? 'regular' : 'action'}
-          onClick={
-            isConnected ? disconnectConversation : connectConversation
-          }
-        />
       </div>
     </div>
   );
