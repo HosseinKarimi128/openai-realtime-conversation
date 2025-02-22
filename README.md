@@ -39,6 +39,14 @@ so the Node relay can authenticate with OpenAI.
    - Release to finalize your speech for GPT.
    - GPT’s audio response is streamed back in near real time.
 
+
+## Customizing OpenAI LLM Instructions
+To change the instructions for the OpenAI language model, edit the configuration file:
+
+```js
+/src/utils/conversation_config.js
+```
+
 ## Custom Patch
 
 A small patch is applied to `@openai/realtime-api-beta`, changing the default model to `"gpt-4o-mini-realtime-preview-2024-12-17"` and adjusting voice and temperature.  
