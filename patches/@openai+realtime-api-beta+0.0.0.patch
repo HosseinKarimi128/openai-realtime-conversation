@@ -1,0 +1,47 @@
+diff --git a/node_modules/@openai/realtime-api-beta/lib/api.js b/node_modules/@openai/realtime-api-beta/lib/api.js
+index cc8f904..3fe89f7 100644
+--- a/node_modules/@openai/realtime-api-beta/lib/api.js
++++ b/node_modules/@openai/realtime-api-beta/lib/api.js
+@@ -56,7 +56,7 @@ export class RealtimeAPI extends RealtimeEventHandler {
+    * @param {{model?: string}} [settings]
+    * @returns {Promise<true>}
+    */
+-  async connect({ model } = { model: 'gpt-4o-realtime-preview-2024-10-01' }) {
++  async connect({ model } = { model: 'gpt-4o-mini-realtime-preview-2024-12-17' }) {
+     if (!this.apiKey && this.url === this.defaultUrl) {
+       console.warn(`No apiKey provided for connection to "${this.url}"`);
+     }
+@@ -113,7 +113,7 @@ export class RealtimeAPI extends RealtimeEventHandler {
+       const wsModule = await import(/* webpackIgnore: true */ moduleName);
+       const WebSocket = wsModule.default;
+       const ws = new WebSocket(
+-        'wss://api.openai.com/v1/realtime?model=gpt-4o-realtime-preview-2024-10-01',
++        'wss://api.openai.com/v1/realtime?model=gpt-4o-mini-realtime-preview-2024-12-17',
+         [],
+         {
+           finishRequest: (request) => {
+diff --git a/node_modules/@openai/realtime-api-beta/lib/client.js b/node_modules/@openai/realtime-api-beta/lib/client.js
+index 2c48d7f..189c95e 100644
+--- a/node_modules/@openai/realtime-api-beta/lib/client.js
++++ b/node_modules/@openai/realtime-api-beta/lib/client.js
+@@ -194,16 +194,17 @@ export class RealtimeClient extends RealtimeEventHandler {
+   constructor({ url, apiKey, dangerouslyAllowAPIKeyInBrowser, debug } = {}) {
+     super();
+     this.defaultSessionConfig = {
+-      modalities: ['text', 'audio'],
++      modalities: ['audio'],
+       instructions: '',
+-      voice: 'verse',
++      voice: 'ash',
+       input_audio_format: 'pcm16',
+       output_audio_format: 'pcm16',
++      model: 'gpt-4o-mini-realtime-preview-2024-12-17',
+       input_audio_transcription: null,
+       turn_detection: null,
+       tools: [],
+       tool_choice: 'auto',
+-      temperature: 0.8,
++      temperature: 0.1,
+       max_response_output_tokens: 4096,
+     };
+     this.sessionConfig = {};

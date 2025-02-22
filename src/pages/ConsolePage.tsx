@@ -520,7 +520,9 @@ export function ConsolePage() {
           iconPosition={isConnected ? 'end' : 'start'}
           icon={isConnected ? X : Zap}
           buttonStyle={isConnected ? 'regular' : 'action'}
-          onClick={isConnected ? disconnectConversation : connectConversation}
+          onClick={
+            isConnected ? disconnectConversation : connectConversation
+          }
         />
       </div>
     </div>
