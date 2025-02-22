@@ -24,23 +24,6 @@ import { Toggle } from '../components/toggle/Toggle';
 import './ConsolePage.scss';
 
 /**
- * Type for result from get_weather() function call
- */
-interface Coordinates {
-  lat: number;
-  lng: number;
-  location?: string;
-  temperature?: {
-    value: number;
-    units: string;
-  };
-  wind_speed?: {
-    value: number;
-    units: string;
-  };
-}
-
-/**
  * Type for all event logs
  */
 interface RealtimeEvent {
