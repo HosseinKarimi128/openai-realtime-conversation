@@ -266,7 +266,7 @@ export function ConsolePage() {
     // Set instructions
     client.updateSession({ instructions: instructions });
     // Set transcription, otherwise we don't get user transcriptions back
-    client.updateSession({ input_audio_transcription: { model: 'whisper-1' } });
+    // client.updateSession({ input_audio_transcription: { model: 'whisper-1' } });
 
       // handle realtime events from client + server for event logging
     client.on('realtime.event', (realtimeEvent: RealtimeEvent) => {
